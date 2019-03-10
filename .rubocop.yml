@@ -1,0 +1,43 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 15
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/ConditionalAssignment:
+  EnforcedStyle: assign_inside_condition
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
