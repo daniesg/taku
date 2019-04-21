@@ -1,0 +1,33 @@
+<% unless resource.errors.empty? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <% resource.errors.full_messages.each do |message|%>
+      <p class="text-white small mb-1"><%= message %></p>
+    <% end %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <i class="fal fa-times"></i>
+    </button>
+  </div>
+<% end %>
+<%= image_tag "logos/main.svg", class: "devise-logo" %>
+<h1 class="devise-heading">Forgot your password?</h1>
+<h2 class="devise-sub-heading">Reset it here</h2>
+
+<%= form_for(resource,
+             as: resource_name,
+             url: password_path(resource_name),
+             html: { method: :post, class: "mt-6" }) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                      placeholder: "Email",
+                      class: "form-control devise-input mb-5" %>
+  </div>
+
+  <%= f.submit "RESET", class: "btn btn-success devise-btn mt-5 mb-6" %>
+<% end %>
+
+<%= link_to "Remember your password?", new_session_path(resource_name) %>
+<br>
+<%= link_to "Need an account?", new_registration_path(resource_name) %>
+<p class="mt-1">Didn't receive confirmation instructions?</p>
+<%= link_to "RESEND", new_confirmation_path(resource_name),
+            class: "btn btn-secondary devise-btn mt-4" %>

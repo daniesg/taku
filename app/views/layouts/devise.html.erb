@@ -1,0 +1,17 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'pages/devise', media: 'all' %>
+<% end %>
+
+<% content_for :application_body do %>
+  <div class="container">
+    <div class="row">
+      <div class="offset-xl-4 col-xl-4 offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-1 col-sm-10">
+        <div class="devise">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
