@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <td class="email-main-heading"><%= t ".heading" %></td>
+  </tr>
+  <tr>
+    <td class="email-main-text">
+      <% if @resource&.unconfirmed_email? %>
+        <%= t(".greeting.changing", email: @resource.unconfirmed_email) %>
+      <% else %>
+        <%= t(".greeting.changed", email: @resource.email) %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td class="email-main-image"><%= image_tag "mailers/devise/home.png" %></td>
+  </tr>
+</table>
+
+<% content_for :devise_mailer_reason do %>
+  <%= t(".reason") %>
+<% end %>

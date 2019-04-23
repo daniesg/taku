@@ -1,0 +1,109 @@
+<% content_for :mailer_body do %>
+  <style type="text/css">
+    .email-main {
+      background-color: white;
+      border-radius: 12px;
+    }
+
+    .email-main-heading {
+      padding: 25px 25px 10px;
+      color: #80C4B7;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .email-main-text {
+      padding: 0 25px;
+      color: #556270;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .email-main-action {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .email-main-action a {
+      text-decoration: none;
+      font-weight: 700;
+      color: white;
+      background-color: #FFB1A8;
+      padding: 19px 88px;
+      border-radius: 25px;
+    }
+
+    .email-main-image {
+      padding-bottom: 25px;
+      text-align: center;
+      width: 400px;
+    }
+
+    .email-footer {
+      padding: 20px 0;
+    }
+
+    .email-footer-copyright {
+      color: #999999;
+      text-align: center;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+
+    .email-footer-info {
+      color: #436E7F;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+
+  <table>
+    <tr>
+      <td></td>
+      <td class="email">
+        <table>
+          <tr>
+            <td>
+              <table>
+                <tr class="email-header">
+                  <td>
+                    <%= image_tag "logos/main.png", class: "email-header-logo" %>
+                  </td>
+                  <td class="email-header-address">
+                    <%= raw(t("devise.mailer.sent_to", email: @email)) %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="email-main">
+              <%= yield %>
+            </td>
+          </tr>
+          <tr>
+            <td class="email-footer">
+              <table>
+                <tr>
+                  <td class="email-footer-copyright">
+                    <%= t "copyright" %>
+                  </td>
+                </tr>
+                <% if content_for? :devise_mailer_reason %>
+                  <tr>
+                    <td class="email-footer-info">
+                      <%= content_for :devise_mailer_reason %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= render template: "layouts/mailer" %>

@@ -1,0 +1,9 @@
+defaults: &defaults
+  MAILTRAP_USERNAME: "abc..."
+  MAILTRAP_PASSWORD: "abc..."
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults

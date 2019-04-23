@@ -1,0 +1,80 @@
+// Colours
+$peach: #FFE2D0;
+$rose: #FFB1A8;
+$pink: #FF6B6B;
+$apple: #C44D58;
+$lime: #C7F464;
+$sea: #80C4B7;
+$aqua: #4ECDC4;
+$navy: #436E7F;
+$slate: #556270;
+
+$white: #FFFFFF;
+$gray-100: #EAEAEA;
+$gray-200: #D8D8D8;
+$gray-300: #D3D3D3;
+$gray-400: #B9B9B9;
+$gray-500: #A2A2A2;
+$gray-600: #999999;
+$gray-700: #747474;
+$gray-800: #4C4C4C;
+$black: #343434;
+
+// Other Variables
+$body-bg: $white;
+$body-color: $gray-800;
+$spacer: 1rem;
+$yiq-contrasted-threshold: 215;
+
+$border-radius: .25rem;
+$border-radius-lg: .5rem;
+
+$custom-checkbox-indicator-border-radius: .25rem;
+
+$primary: $aqua;
+$secondary: $navy;
+$info: $pink;
+$success: $sea;
+$warning: $slate;
+$danger: $apple;
+
+$theme-colors: (
+  "highlight": $lime,
+  "accent": $peach
+);
+
+$alert-bg-level: 1;
+$alert-border-level: 3;
+$alert-color-level: -10;
+
+$font-family-sans-serif: "Poppins", "Helvetica Neue", Arial, sans-serif;
+$link-color: $info;
+
+$input-focus-box-shadow: none;
+$input-color: $gray-500;
+$input-placeholder-color: $gray-300;
+
+$spacers: (
+  5: ($spacer * 2),
+  6: ($spacer * 3),
+  7: ($spacer * 4),
+  8: ($spacer * 5),
+  9: ($spacer * 6)
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 720px,
+  lg: 980px,
+  xl: 1200px,
+  xxl: 1720px
+);
+
+$container-max-widths: (
+  sm: 456px,
+  md: 696px,
+  lg: 956px,
+  xl: 1176px,
+  xxl: 1696px
+);
